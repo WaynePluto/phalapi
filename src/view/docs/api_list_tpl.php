@@ -8,11 +8,11 @@ $table_color_arr = explode(" ", "red orange yellow olive teal blue violet purple
     <title><?php echo $projectName; ?> - 在线接口列表</title>
 
     <!-- <link href="https://lib.baomitu.com/semantic-ui/2.3.3/semantic.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://lib.baomitu.com/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.js"></script>
     <meta name="robots" content="none"/>
 </head>
 <body>
@@ -196,7 +196,7 @@ $table_color_arr = explode(" ", "red orange yellow olive teal blue violet purple
             <div class="column" align="center">
                 <p>
                     <strong>接口，从简单开始！</strong>
-                    当前版本由<a href="https://www.yesapi.cn/" target="_blank">小白开放平台</a>独家赞助。<br/>
+                    当前版本由<a href="https://www.yesapi.cn/?f=github" target="_blank">广州 • 果创云 • 小白都喜欢的后端云服务</a>独家赞助。<br/>
                     © 2015-<?php echo date('Y'); ?> Powered  By <a href="http://www.phalapi.net/" target="">PhalApi <?php echo PHALAPI_VERSION; ?> </a> All Rights Reserved. <span id="version_update"></span>
                 </p>
             </div>

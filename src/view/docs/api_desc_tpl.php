@@ -10,11 +10,11 @@ echo <<<EOT
     <meta charset="utf-8">
     <title>{$description} - {$service} - {$projectName} - 在线接口文档</title>
 
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/semantic.min.css">
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/components/table.min.css">
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/components/container.min.css">
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/components/message.min.css">
-    <link rel="stylesheet" href="https://staticfile.qnssl.com/semantic-ui/2.1.6/components/label.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/table.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/container.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/message.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/semantic-ui/2.2.2/components/label.min.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
@@ -315,7 +315,7 @@ echo <<<EOT
             <div class="column" align="center">
                 <p>
                     <strong>接口，从简单开始！</strong>
-                    当前版本由<a href="https://www.yesapi.cn/" target="_blank">小白开放平台</a>独家赞助。<br/>
+                    当前版本由<a href="https://www.yesapi.cn/?f=github" target="_blank">广州 • 果创云 • 小白都喜欢的后端云服务</a>独家赞助。<br/>
                     © 2015-{$thisYear} Powered  By <a href="http://www.phalapi.net/" target="">PhalApi {$version} </a> All Rights Reserved. <span id="version_update"></span>
                 </p>
             </div>
