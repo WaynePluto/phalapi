@@ -78,13 +78,18 @@ $typeMaps = array(
     'float' => '浮点型',
     'boolean' => '布尔型',
     'date' => '日期',
-    'array' => '数组',
+    'array' => '字符串', // 转换成客户端看到的参数类型
     'fixed' => '固定值',
     'enum' => '枚举类型',
     'object' => '对象',
 );
 
 foreach ($rules as $key => $rule) {
+    // 接口文档不显示
+    if (!empty($rule['is_doc_hide'])) {
+        continue;
+    }
+
     $name = $rule['name'];
     if (!isset($rule['type'])) {
         $rule['type'] = 'string';
@@ -104,6 +109,16 @@ foreach ($rules as $key => $rule) {
         }
     } else if (!is_string($default)) {
         $default = var_export($default, true);
+    }
+
+    // 数组类型的格式说明
+    if ($rule['type'] == 'array' && in_array($rule['format'], array('json', 'explode'))) {
+        $type .= sprintf(
+            '<span class="ui label blue small">%s</span>',
+            $rule['format'] == 'json'
+            ? 'JSON格式'
+            : sprintf('用%s分割', isset($rule['separator']) ? $rule['separator'] : ',')
+        );
     }
 
     $other = array();
@@ -201,6 +216,11 @@ echo <<<EOT
         </tr>
 EOT;
 foreach ($rules as $key => $rule){
+    // 接口文档不显示
+    if (!empty($rule['is_doc_hide'])) {
+        continue;
+    }
+
     $source = isset($rule['source']) ? $rule['source'] : '';
     //数据源为server和header时该参数不需要提供
     if ($source == 'server' || $source == 'header') {
