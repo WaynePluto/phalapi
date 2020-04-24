@@ -6,6 +6,9 @@
 // 定义项目路径
 defined('API_ROOT') || define('API_ROOT', dirname(__FILE__) . DIRECTORY_SEPARATOR . '..');
 
+// 运行模式，可以是：dev, test, prod
+defined('API_MODE') || define('API_MODE', 'prod');
+
 // 引入composer
 require_once API_ROOT . '/vendor/autoload.php';
 
@@ -24,5 +27,8 @@ if (\PhalApi\DI()->debug) {
     ini_set('display_errors', 'On'); 
 }
 
-// 翻译语言包设定
-\PhalApi\SL('zh_cn');
+// 翻译语言包设定-简体中文
+\PhalApi\SL(isset($_COOKIE['language']) ? $_COOKIE['language'] : 'zh_cn');
+
+// English
+// \PhalApi\SL('en');

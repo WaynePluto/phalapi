@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Portal\\' => array($baseDir . '/src/portal'),
     'PhalApi\\Task\\' => array($vendorDir . '/phalapi/task/src'),
     'PhalApi\\QrCode\\' => array($vendorDir . '/phalapi/qrcode/src'),
     'PhalApi\\NotORM\\' => array($vendorDir . '/phalapi/notorm/src'),

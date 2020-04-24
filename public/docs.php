@@ -29,19 +29,59 @@
 
 require_once dirname(__FILE__) . '/init.php';
 
-$projectName = 'PhalApi开源接口框架';
+if (!empty($_GET['language'])) {
+    \PhalApi\SL($_GET['language']);
+    setcookie('language', $_GET['language'], time() + 86400 * 360, '/');
+}
+
+$projectName = \PhalApi\T('PhalApi API Framework');
+$docViewCode = ''; // 查看文档密码，为空时不限制
+
+$detailTpl = API_ROOT . '/src/view/docs/api_desc_tpl.php';
+$listTpl = API_ROOT . '/src/view/docs/api_list_tpl.php';
 
 if (substr(PHP_SAPI, 0, 3) == 'cli') {
     // 生成离线文档
-    $apiHtml = new \PhalApi\Helper\ApiStaticCreate($projectName);
-    $apiHtml->render();
+    $apiHtml = new \PhalApi\Helper\ApiStaticCreate($projectName, 'fold', $detailTpl);
+    $apiHtml->render($listTpl);
 } else if (!empty($_GET['detail'])) {
+    checkViewCode();
+
     // 接口详情页
     $apiDesc = new \PhalApi\Helper\ApiDesc($projectName);
-    $apiDesc->render(API_ROOT . '/src/view/docs/api_desc_tpl.php');
+    $apiDesc->render($detailTpl);
 } else {
+    checkViewCode();
+
     // 接口列表页
     $apiList = new \PhalApi\Helper\ApiList($projectName);
-    $apiList->render(API_ROOT . '/src/view/docs/api_list_tpl.php');
+    $apiList->render($listTpl);
 }
 
+/**
+ * 检测查看密码
+ */
+function checkViewCode() {
+    // 不设置查看密码，则不限制
+    global $projectName, $docViewCode;
+    if (empty($docViewCode)) {
+        return;
+    }
+    $docViewCode = strval($docViewCode);
+
+    session_start();
+
+    $submitError = NULL;
+    if (!empty($_POST['view_code'])) {
+        if ($_POST['view_code'] == $docViewCode) {
+            $_SESSION['doc_view_code'] = $docViewCode;
+        } else {
+            $submitError = \PhalApi\T('wrong view password');
+        }
+    }
+
+    if (empty($_SESSION['doc_view_code']) || $_SESSION['doc_view_code'] != $docViewCode) {
+        include API_ROOT . '/src/view/docs/check_view_code.php';
+        die();
+    }
+}
