@@ -38,6 +38,10 @@ $di->error = new ApiError();
 // portal后台管理员
 $di->admin = new Portal\Common\Admin();
 
+// 允许跨域
+$di->response->addHeaders('Access-Control-Allow-Origin', '*');
+$di->response->addHeaders('Access-Control-Allow-Methods', 'POST');
+
 /** ---------------- 第三应用 服务注册 ---------------- **/
 
 // 加载plugins目录下的第三方应用初始化文件

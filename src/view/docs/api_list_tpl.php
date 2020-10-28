@@ -15,7 +15,7 @@ if (substr(PHP_SAPI, 0, 3) == 'cli') {
     <link rel="stylesheet" href="<?php echo $semanticPath; ?>semantic.min.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <script src="/static/jquery.min.js"></script>
+    <script src="./static/jquery.min.js"></script>
 <script src="<?php echo $semanticPath; ?>semantic.min.js"></script>
     <meta name="robots" content="none"/>
 </head>
@@ -86,7 +86,7 @@ if (substr(PHP_SAPI, 0, 3) == 'cli') {
             <?php if ($theme == 'fold') { ?>
             <div class="twelve wide stretched column">
             <?php } else { ?>
-            <div class="wide stretched column">
+            <div class="fifteen wide stretched column">
             <?php
                     // 展开时，将全部的接口服务，转到第一组
                     $mergeAllApiS = array('all' => array('methods' => array()));
@@ -134,7 +134,7 @@ if (substr(PHP_SAPI, 0, 3) == 'cli') {
                             <tr>
                                 <th>#</th>
                                 <th><?php echo \PhalApi\T('API Service'); ?></th>
-                                <th><?php echo \PhalApi\T('Request Method'); ?></th>
+                                <!-- <th><?php echo \PhalApi\T('Request Method'); ?></th> -->
                                 <th><?php echo \PhalApi\T('API Title'); ?></th>
                                 <th><?php echo \PhalApi\T('API Description'); ?></th>
                             </tr>
@@ -147,7 +147,8 @@ if (substr(PHP_SAPI, 0, 3) == 'cli') {
                                 $s = str_replace('\\', '_', $mItem['service']);
                                 $link = $this->makeApiServiceLink($s,$theme);
                                 $NO   = $num++;
-                                echo "<tr><td>{$NO}</td><td><a href=\"$link\" target='_blank'>{$s}</a></td><td>{$mItem['methods']}</td><td>{$mItem['title']}</td><td>{$mItem['desc']}</td></tr>";
+                                echo "<tr><td>{$NO}</td><td><a href=\"$link\" target='_blank'>{$s}</a></td><td>{$mItem['title']}</td><td>{$mItem['desc']}</td></tr>";
+                                // echo "<tr><td>{$NO}</td><td><a href=\"$link\" target='_blank'>{$s}</a></td><td>{$mItem['methods']}</td><td>{$mItem['title']}</td><td>{$mItem['desc']}</td></tr>";
                             }
                             ?>
                             </tbody>

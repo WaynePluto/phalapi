@@ -1,11 +1,11 @@
-  <div class="ui inverted vertical footer segment" style="margin-top:30px; background: #1B1C1D none repeat scroll 0% 0%;" >
+  <div class="ui inverted vertical footer segment" style="margin-top:30px; background: #333 none repeat scroll 0% 0%;" >
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
         <div class="ten wide column centered">
             <div class="column" align="center" >
                 <img src="https://www.phalapi.net/images/icon_logo.png" alt="PhalApi">
             </div>
-            <div class="column" align="center">
+            <!-- <div class="column" align="center">
                 <p>
                     <strong><?php echo \PhalApi\T('A PHP framework foucs on API fast development.'); ?></strong>
                     <br />
@@ -13,7 +13,7 @@
                     &nbsp;&nbsp;
                     <a target="_blank" href="http://pro.phalapi.net/" class="orange"><span class="ui tiny label orange"><i class="icon arrow alternate circle up"></i>专业版<span></a>
                 </p>
-            </div>
+            </div> -->
         </div>
       </div>
     </div>
