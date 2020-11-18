@@ -84,7 +84,7 @@
                 lineColor:'#5cbdaa'
             });
 
-            $.getJSON('/?s=Portal.Admin.CheckLogin', function (data) {
+            $.getJSON('../../?s=Portal.Admin.CheckLogin', function (data) {
                 if (data && data.ret == 200) {
                     if (data.data.is_install === false) {
                         layer.msg('请先安装运营平台！即将进入安装页面……', function () {
@@ -118,7 +118,7 @@
             //}
 
             $.ajax({
-                url: '/?s=Portal.Admin.Login',
+                url: '../../?s=Portal.Admin.Login',
                 type:'post',
                 data: data,
                 success:function(data){

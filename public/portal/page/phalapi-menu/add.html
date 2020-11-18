@@ -106,7 +106,7 @@
         			  type: 2, 
         			  title: '全部图标',
         			  area: ['800px', '400px'],
-        			  content: '/portal/page/icon.html' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+        			  content: '../../../portal/page/icon.html' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
         		}); 
         	}
         }
@@ -136,7 +136,7 @@
         form.on('submit(saveBtn)', function (data) {
 
             $.ajax({
-                url: '/?s=Portal.Page.AddNewMenu',
+                url: '../../../?s=Portal.Page.AddNewMenu',
                 type:'post',
                 data: data.field,
                 success:function(data){

@@ -135,7 +135,7 @@
             miniTongji = layui.miniTongji;
 
         var options = {
-            iniUrl: "/?s=Portal.Page.StartUp",    // 初始化接口
+            iniUrl: "../?s=Portal.Page.StartUp",    // 初始化接口
             clearUrl: "api/clear.json", // 缓存清理接口
             urlHashLocation: true,      // 是否打开hash定位
             bgColorDefault: 0,          // 主题默认配置
@@ -148,7 +148,7 @@
         miniAdmin.render(options);
 
         $('.login-out').on("click", function () {
-            $.getJSON('/?s=Portal.Admin.Logout', function (data) {
+            $.getJSON('../?s=Portal.Admin.Logout', function (data) {
                 layer.msg('退出登录成功', function () {
                     window.location = './page/login-1.html';
                 });
