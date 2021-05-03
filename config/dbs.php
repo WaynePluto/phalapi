@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 分库分表的自定义数据库路由配置
  * 
@@ -16,8 +17,8 @@ return array(
             'type'      => 'mysql',                 // 数据库类型，暂时只支持：mysql, sqlserver / database type
             'host'      => '127.0.0.1',             // 数据库域名 / database host
             'name'      => 'phalapi',               // 数据库名字 / database name
-            'user'      => 'root',                  // 数据库用户名 / database user
-            'password'  => '',                      // 数据库密码 / database password
+            'user'      => 'custom_u',              // 数据库用户名 / database user
+            'password'  => 'custom_pw',             // 数据库密码 / database password
             'port'      => 3306,                    // 数据库端口 / database port
             'charset'   => 'UTF8',                  // 数据库字符集 / database charset
             'pdo_attr_string'   => false,           // 数据库查询结果统一使用字符串，true是，false否
@@ -53,6 +54,6 @@ return array(
                 array('start' => 0, 'end' => 2, 'db' => 'db_master'),     // 三张分表的配置：array('start' => 开始下标, 'end' => 结束下标, 'db' => 服务器标记)
             ),
         ),
-         */
+     */
     ),
 );
